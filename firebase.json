@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "public/browser",
+    "public": "dist/birthday-reminder/browser",
     "ignore": [
       "firebase.json",
       "**/.*",
