@@ -1,24 +1,43 @@
 <!doctype html>
 <html lang="en" data-theme="lofi">
+
 <head>
   <meta charset="utf-8">
   <title>BirthdayReminder</title>
-  <base href="/">
+  <base href="./">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/x-icon" href="favicon.png">
   <link rel="manifest" href="manifest.webmanifest">
   <meta name="theme-color" content="#fafafa">
   <link rel="manifest" href="manifest.webmanifest">
   <meta name="theme-color" content="#1976d2">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
 </head>
-<body>
+
+<body class="min-w-screen min-h-screen">
   <app-root>
-    <h1 class="font-dancing text-3xl">Birthday reminder PWA</h1>
-    <span class="loading loading-infinity loading-lg"></span>
+    <div class="landing-screen">      
+      <h1 class="">Birthday reminder</h1>
+      <p>Loading your celebrations...</p>
+      <span class="loading loading-infinity loading-lg"></span>
+    </div>
   </app-root>
   <noscript>Please enable JavaScript to continue using this application.</noscript>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const appRoot = document.querySelector('app-root');
+      if (appRoot) {
+        appRoot.classList.add('animate-fadeOut');
+        setTimeout(() => {
+          appRoot.innerHTML = '';
+        }, 500);
+      }
+    });
+  </script>
 </body>
+
 </html>
