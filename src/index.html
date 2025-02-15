@@ -19,22 +19,24 @@
 </head>
 
 <body class="min-w-screen min-h-screen">
-  <app-root>
-    <div class="landing-screen">      
-      <h1 class="">Birthday reminder</h1>
-      <p>Loading your celebrations...</p>
-      <span class="loading loading-infinity loading-lg"></span>
-    </div>
+  <app-root class="app-root-loading">
   </app-root>
+  <div data-cy="landing-screen" class="landing-screen">      
+    <h1 class="">Birthday reminder</h1>
+    <p>Loading your celebrations...</p>
+    <span class="loading loading-infinity loading-lg"></span>
+  </div>
   <noscript>Please enable JavaScript to continue using this application.</noscript>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      const appRoot = document.querySelector('app-root');
-      if (appRoot) {
-        appRoot.classList.add('animate-fadeOut');
-        setTimeout(() => {
-          appRoot.innerHTML = '';
-        }, 500);
+      const landingScreen = document.body.querySelector('.landing-screen');
+      const appRoot = document.body.querySelector('app-root');
+      if (landingScreen && appRoot) {
+        landingScreen.classList.add('animate-fadeOut');
+        setTimeout(()=> {
+          landingScreen.remove();
+          appRoot.classList.remove('app-root-loading');
+        }, 500)
       }
     });
   </script>
