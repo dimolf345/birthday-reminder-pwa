@@ -2,9 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+.app-root-loading {
+    @apply block h-0
+}
 
 .landing-screen {
-    @apply absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center
+    @apply absolute w-screen h-screen flex flex-col justify-center items-center bg-white text-center;
 }
 
 .landing-screen h1 {

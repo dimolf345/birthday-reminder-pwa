@@ -13,7 +13,7 @@ module.exports = {
         },
       },
       animation: {
-        fadeOut: 'fadeOut 0.5s forwards',
+        fadeOut: 'fadeOut 0.50s forwards',
       },
     },
   },
